@@ -2,6 +2,7 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Spicy Sessions</title>
   <style>
     body {
@@ -9,32 +10,58 @@
       text-align: center;
       background-color: #000000;
       color: #ffffff;
-      margin: 40px;
+      margin: 40px; /* デフォルトの余白 */
     }
     .logo {
-      width: 500px;
+      /* width: 500px; ロゴ画像の幅は内側のimgタグで指定されているためコメントアウト */
       max-width: 90%;
       margin: 0 auto;
+    }
+    .logo img { /* ロゴ画像共通スタイル */
+        max-width: 100%; /* 親要素の幅を超えないように */
+        height: auto; /* 高さは自動調整 */
+    }
+    .logo-main img { /* 上部のロゴ画像用 */
+        width: 500px; /* PCでの幅 */
+        max-width: 90%; /* 画面幅に対する最大値 */
+    }
+    .logo-bottom img { /* 下部のタイトル画像用 */
+        width: 100%; /* PCでは幅いっぱい */
+        max-width: 600px; /* 最大幅を設定（任意） */
+        margin: 20px auto 0; /* 上に少し余白 */
     }
     .title {
       font-size: 1.2em;
       margin-top: 10px;
       margin-bottom: 40px;
+      line-height: 1.6em; /* 行間を少し調整 */
+    }
+    .mv-image img { /* MV画像用のスタイル */
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 20px; /* 画像下に余白 */
+    }
+    .mc-title { /* MCタイトルのスタイル */
+        font-size: 1.1em;
+        margin-bottom: 15px;
+        font-weight: bold;
     }
     .hosts {
       display: flex;
       justify-content: center;
-      gap: 60px;
+      gap: 60px; /* PCでの間隔 */
       margin-bottom: 20px;
-      flex-wrap: wrap;
+      flex-wrap: wrap; /* 折り返しは維持 */
     }
     .host {
       text-align: center;
     }
     .host img {
-      width: 180px;
+      width: 180px; /* PCでの画像幅 */
       height: auto;
       border-radius: 10px;
+      display: block; /* 中央寄せのため */
+      margin: 0 auto; /* 中央寄せ */
     }
     .host p {
       margin-top: 10px;
@@ -53,31 +80,80 @@
       text-decoration: underline;
       color: #00FFFF; /* ホバー時はシアン */
     }
-#footer {
-    margin-top: 2em;
-    font-size: 0.9em;
-    text-align: center;
-    color: #666;
-}
+    #footer {
+      margin-top: 2em;
+      font-size: 0.9em;
+      text-align: center;
+      color: #666;
+    }
+
+    /* --- スマートフォン向けのスタイル (画面幅768px以下) --- */
+    @media (max-width: 768px) {
+      body {
+        margin: 20px; /* スマホでは余白を狭める */
+        font-size: 14px; /* ベースのフォントサイズを少し調整 */
+      }
+      .logo-main img {
+         width: 80%; /* スマホではロゴ幅を調整 */
+      }
+       .logo-bottom img {
+         width: 95%; /* スマホではタイトル画像幅を調整 */
+         max-width: 95%;
+      }
+      .title {
+        font-size: 1em; /* スマホではタイトルフォントサイズを調整 */
+        margin-bottom: 30px;
+      }
+      .hosts {
+        flex-direction: column; /* MC紹介を縦並びに変更 */
+        gap: 30px; /* 縦並びの際の間隔を調整 */
+        align-items: center; /* 中央揃え */
+      }
+      .host img {
+        width: 150px; /* スマホではMC画像サイズを調整 */
+      }
+       .info {
+        font-size: 0.95em; /* スマホでは情報部分のフォントサイズを調整 */
+        line-height: 1.8em; /* 行間も調整 */
+       }
+       #footer {
+        font-size: 0.8em; /* スマホではフッターの文字を小さく */
+       }
+    }
+     /* --- さらに小さいスマートフォン向けのスタイル (画面幅480px以下) --- */
+    @media (max-width: 480px) {
+        body {
+            margin: 15px;
+        }
+        .logo-main img {
+            width: 90%; /* さらに小さい画面でのロゴ幅 */
+        }
+        .title {
+            font-size: 0.9em;
+        }
+         .host img {
+            width: 130px; /* さらに小さい画面でのMC画像サイズ */
+         }
+         .info {
+            font-size: 0.9em;
+         }
+    }
   </style>
 </head>
 <body>
-  <!-- タイトル画像 -->
-  <div class="logo">
-    <img src="statics/img/spicysessions_logo.png" alt="Spicy Sessions" style="width:50%">
+  <div class="logo logo-main"> <img src="statics/img/spicysessions_logo.png" alt="Spicy Sessions">
     </div>
 
-  <!-- サブタイトル -->
   <div class="title">
     音楽好き必見！TBSチャンネル1で毎月末に絶賛放映中<br>
     素敵なゲストとの“刺激的”なセッションを届ける音楽番組<br>
     Spicy Sessionsに関する極私的ポータルサイト
   </div>
-  <img  src="https://www.tbs.co.jp/tbs-ch/series/yRNA2/special/img_mv_text_smp.png">
 
-  <!-- MC紹介 -->
-  <p>MC</p>
-  <div class="hosts">
+  <div class="mv-image"> <img src="https://www.tbs.co.jp/tbs-ch/series/yRNA2/special/img_mv_text_smp.png" alt="番組紹介画像">
+  </div>
+
+  <p class="mc-title">MC</p> <div class="hosts">
     <div class="host">
       <img src="statics/img/kurosawa.jpg" alt="黒沢薫">
       <p><a href="https://www.kaorukurosawa.com/profile/" target="_blank" rel="noopener noreferrer" >黒沢薫（ゴスペラーズ）</a></p>
@@ -88,25 +164,22 @@
     </div>
   </div>
 
-  <!-- 情報 -->
   <div class="info">
     Content<br>
     <a href="https://www.tbs.co.jp/tbs-ch/series/yRNA2/" target="_blank" rel="noopener noreferrer">公式サイト（TBSチャンネル）</a><br>
     <a href="https://tonytani37.github.io/SpicySessions" target="_blank" rel="noopener noreferrer">放送セッション曲一覧（非公式）</a> <br>
-    関連データ JSON (<a href="https://storage.googleapis.com/hazard_map/spicy_sessions_songs.json" target="_blank" rel="noopener noreferrer">ファイル</a>,
-    <a href="https://storage.googleapis.com/hazard_map/spicy_sessions_songs_spec_v2.pdf">ドキュメント</a>),
-    <a href="https://docs.google.com/spreadsheets/d/1dVMzCWKTaqpsLrZmWOAUj8hfB-f3OwdeSz4eHO_J344/edit?usp=sharing" target=_blank" rel="noopener noreferrer">Googleスプレッドシート</a><br>
+    JSON (<a href="https://storage.googleapis.com/hazard_map/spicy_sessions_songs.json" target="_blank" rel="noopener noreferrer">ファイル</a>,
+    <a href="https://storage.googleapis.com/hazard_map/spicy_sessions_songs_spec_v2.pdf" target="_blank" rel="noopener noreferrer">ドキュメント</a>)<br>
+    <a href="https://docs.google.com/spreadsheets/d/1dVMzCWKTaqpsLrZmWOAUj8hfB-f3OwdeSz4eHO_J344/edit?usp=sharing" target="_blank" rel="noopener noreferrer">Googleスプレッドシート</a><br>
     Wikipedia <a href="https://ja.wikipedia.org/wiki/Spicy_Sessions" target="_blank" rel="noopener noreferrer">Spicy Sessions</a><br>
   </div>
   <br>
-  <div class="logo">
-    <img src="statics/img/title.png" alt="スパイシーセッションズ タイトル" style="width:100%;">
+  <div class="logo logo-bottom"> <img src="statics/img/title.png" alt="スパイシーセッションズ タイトル">
   </div>
   <div id="footer">
-    <!-- <p> β 1</p> -->
     <p>このサイトは非公式ファンサイトです。</p>
     <p>そのため記載内容が正確ではない場合があります。</p>
-</div>
+  </div>
 
 </body>
 </html>
