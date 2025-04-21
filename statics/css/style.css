@@ -1,0 +1,133 @@
+body {
+    font-family: "Hiragino Kaku Gothic ProN", Meiryo, sans-serif;
+    text-align: center;
+    background-color: #000000;
+    color: #ffffff;
+    margin: 40px; /* デフォルトの余白 */
+  }
+  .logo {
+    /* width: 500px; ロゴ画像の幅は内側のimgタグで指定されているためコメントアウト */
+    max-width: 90%;
+    margin: 0 auto;
+  }
+  .logo img { /* ロゴ画像共通スタイル */
+      max-width: 100%; /* 親要素の幅を超えないように */
+      height: auto; /* 高さは自動調整 */
+  }
+  .logo-main img { /* 上部のロゴ画像用 */
+      width: 500px; /* PCでの幅 */
+      max-width: 90%; /* 画面幅に対する最大値 */
+  }
+  .logo-bottom img { /* 下部のタイトル画像用 */
+      width: 100%; /* PCでは幅いっぱい */
+      max-width: 600px; /* 最大幅を設定（任意） */
+      margin: 20px auto 0; /* 上に少し余白 */
+  }
+  .title {
+    font-size: 1.2em;
+    margin-top: 10px;
+    margin-bottom: 40px;
+    line-height: 1.6em; /* 行間を少し調整 */
+  }
+  .mv-image img { /* MV画像用のスタイル */
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 20px; /* 画像下に余白 */
+  }
+  .mc-title { /* MCタイトルのスタイル */
+      font-size: 1.1em;
+      margin-bottom: 15px;
+      font-weight: bold;
+  }
+  .hosts {
+    display: flex;
+    justify-content: center;
+    gap: 60px; /* PCでの間隔 */
+    margin-bottom: 20px;
+    flex-wrap: wrap; /* 折り返しは維持 */
+  }
+  .host {
+    text-align: center;
+  }
+  .host img {
+    width: 180px; /* PCでの画像幅 */
+    height: auto;
+    border-radius: 10px;
+    display: block; /* 中央寄せのため */
+    margin: 0 auto; /* 中央寄せ */
+  }
+  .host p {
+    margin-top: 10px;
+    font-size: 0.95em;
+  }
+  .info {
+    margin-top: 30px;
+    font-size: 1.7em;
+    line-height: 2em;
+  }
+  a {
+    color: #FFD700; /* ゴールド（目立つ黄色） */
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+    color: #00FFFF; /* ホバー時はシアン */
+  }
+  #footer {
+    margin-top: 2em;
+    font-size: 0.9em;
+    text-align: center;
+    color: #666;
+  }
+
+  /* --- スマートフォン向けのスタイル (画面幅768px以下) --- */
+  @media (max-width: 768px) {
+    body {
+      margin: 20px; /* スマホでは余白を狭める */
+      font-size: 14px; /* ベースのフォントサイズを少し調整 */
+    }
+    .logo-main img {
+       width: 80%; /* スマホではロゴ幅を調整 */
+    }
+     .logo-bottom img {
+       width: 95%; /* スマホではタイトル画像幅を調整 */
+       max-width: 95%;
+    }
+    .title {
+      font-size: 1em; /* スマホではタイトルフォントサイズを調整 */
+      margin-bottom: 30px;
+    }
+    .hosts {
+      flex-direction: column; /* MC紹介を縦並びに変更 */
+      gap: 30px; /* 縦並びの際の間隔を調整 */
+      align-items: center; /* 中央揃え */
+    }
+    .host img {
+      width: 150px; /* スマホではMC画像サイズを調整 */
+    }
+     .info {
+      font-size: 0.95em; /* スマホでは情報部分のフォントサイズを調整 */
+      line-height: 1.8em; /* 行間も調整 */
+     }
+     #footer {
+      font-size: 0.8em; /* スマホではフッターの文字を小さく */
+     }
+  }
+   /* --- さらに小さいスマートフォン向けのスタイル (画面幅480px以下) --- */
+  @media (max-width: 480px) {
+      body {
+          margin: 15px;
+      }
+      .logo-main img {
+          width: 90%; /* さらに小さい画面でのロゴ幅 */
+      }
+      .title {
+          font-size: 0.9em;
+      }
+       .host img {
+          width: 130px; /* さらに小さい画面でのMC画像サイズ */
+       }
+       .info {
+          font-size: 0.9em;
+       }
+  }
