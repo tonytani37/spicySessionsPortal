@@ -142,18 +142,24 @@ body {
     width: 24px;
     height: 24px;
     border:  1px solid #ffffff; /* 縁取りの色と太さ */
-    border-radius: 50%; /* 円形の縁取りにする場合 */
+    /* border-radius: 50%; 円形の縁取りにする場合 */
     padding: 1px; /* アイコンと縁取りの間に余白を追加 */
     /* background-color: white; 背景色を設定（必要に応じて） */
   }
-  .twitter-container {
-    width: 45%;
+  .twitter-container img {
+    width: 35%;
     margin: 0 auto;
+    border:  1px solid #ffffff; /* 縁取りの色と太さ */
+    /* border-radius: 50%; 円形の縁取りにする場合 */
+    padding: 1px; /* アイコンと縁取りの間に余白を追加 */
   }
   
   /* スマホサイズの画面用のスタイル */
   @media screen and (max-width: 768px) {
-    .twitter-container {
-      width: 100%;
+    .twitter-container img {
+      width: 90%;
+      border:  1px solid #ffffff; /* 縁取りの色と太さ */
+      /* border-radius: 50%; 円形の縁取りにする場合 */
+      padding: 1px; /* アイコンと縁取りの間に余白を追加 */
     }
   }
