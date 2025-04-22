@@ -147,9 +147,9 @@ body {
     /* background-color: white; 背景色を設定（必要に応じて） */
   }
   .twitter-container img {
-    width: 35%;
+    width: 40%;
     margin: 0 auto;
-    border:  1px solid #ffffff; /* 縁取りの色と太さ */
+    border:  1px solid #000000; /* 縁取りの色と太さ */
     /* border-radius: 50%; 円形の縁取りにする場合 */
     padding: 1px; /* アイコンと縁取りの間に余白を追加 */
   }
@@ -158,8 +158,9 @@ body {
   @media screen and (max-width: 768px) {
     .twitter-container img {
       width: 90%;
-      border:  1px solid #ffffff; /* 縁取りの色と太さ */
+      border:  1px solid #000000; /* 縁取りの色と太さ */
       /* border-radius: 50%; 円形の縁取りにする場合 */
       padding: 1px; /* アイコンと縁取りの間に余白を追加 */
     }
   }
+
