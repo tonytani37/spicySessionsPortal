@@ -131,3 +131,29 @@ body {
           font-size: 0.9em;
        }
   }
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 5px;
+  }
+  
+  .social-icons img {
+    width: 24px;
+    height: 24px;
+    border:  1px solid #ffffff; /* 縁取りの色と太さ */
+    border-radius: 50%; /* 円形の縁取りにする場合 */
+    padding: 1px; /* アイコンと縁取りの間に余白を追加 */
+    /* background-color: white; 背景色を設定（必要に応じて） */
+  }
+  .twitter-container {
+    width: 45%;
+    margin: 0 auto;
+  }
+  
+  /* スマホサイズの画面用のスタイル */
+  @media screen and (max-width: 768px) {
+    .twitter-container {
+      width: 100%;
+    }
+  }
