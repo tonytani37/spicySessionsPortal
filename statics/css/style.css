@@ -52,7 +52,7 @@ body {
   .host img {
     width: 180px; /* PCでの画像幅 */
     height: auto;
-    border-radius: 5px;
+    border-radius: 20px;
     display: block; /* 中央寄せのため */
     margin: 0 auto; /* 中央寄せ */
   }
