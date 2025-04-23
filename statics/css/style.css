@@ -38,11 +38,12 @@ body {
       font-size: 1.1em;
       margin-bottom: 15px;
       font-weight: bold;
+      /* text-align: left; */
   }
   .hosts {
     display: flex;
     justify-content: center;
-    gap: 60px; /* PCでの間隔 */
+    gap: 20px; /* PCでの間隔 */
     margin-bottom: 20px;
     flex-wrap: wrap; /* 折り返しは維持 */
   }
@@ -162,5 +163,12 @@ body {
       /* border-radius: 50%; 円形の縁取りにする場合 */
       padding: 1px; /* アイコンと縁取りの間に余白を追加 */
     }
+  }
+  .main-content {
+    display: flex; /* 子要素を横並びにする */
+    flex-wrap: wrap; /* 画面幅に応じて折り返す */
+    gap: 50px; /* 要素間の隙間 */
+    justify-content: center; /* 中央揃えにする場合 (任意) */
+    align-items: flex-start; /* 上端揃えにする場合 (任意) */
   }
 
